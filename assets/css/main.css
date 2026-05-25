@@ -4689,20 +4689,208 @@ input, select, textarea {
 	}
 	/* Style the profile picture */
 
-  /* Style the container for the profile picture */
+  /* Profile picture */
 .profile-picture {
-	display: inline-block;
-	width: 150px; /* Adjust the width and height as needed */
+	display: block;
+	width: 150px;
 	height: 150px;
-	border-radius: 50%; /* Creates a circular shape */
-	overflow: hidden; /* Hide the parts of the image outside the circle */
-	margin-right: 20px; /* Adjust the spacing between the picture and text */
-  }
-  
-  /* Style the profile picture itself */
-  .profile-picture img {
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto 1.5rem auto;
+}
+
+.profile-picture img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover; /* Maintain the aspect ratio and cover the circle */
-  }
-  
+	object-fit: cover;
+}
+
+/* =============================================
+   MOBILE RESPONSIVENESS ENHANCEMENTS
+   ============================================= */
+
+/* Ensure all images are constrained */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Profile picture - scale down on small screens */
+@media screen and (max-width: 736px) {
+	.profile-picture {
+		width: 120px;
+		height: 120px;
+		margin-bottom: 1.25rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.profile-picture {
+		width: 100px;
+		height: 100px;
+		margin-bottom: 1rem;
+	}
+}
+
+/* Intro h2 subtitle */
+@media screen and (max-width: 736px) {
+	#intro h2 {
+		font-size: 1rem;
+		line-height: 1.5;
+		margin-bottom: 1rem;
+	}
+}
+
+/* Intro section - 480px (iPhone SE, 12, 13, 14) */
+@media screen and (max-width: 480px) {
+	#intro {
+		padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+		min-height: auto;
+	}
+
+	#intro h1 {
+		font-size: 2.5rem;
+		margin-bottom: 0.75rem;
+	}
+
+	#intro h2 {
+		font-size: 0.875rem;
+		line-height: 1.5;
+	}
+
+	#intro p {
+		font-size: 0.875rem !important;
+		line-height: 1.75;
+	}
+}
+
+/* Intro section - 360px */
+@media screen and (max-width: 360px) {
+	#intro {
+		padding: 2rem 1.25rem 1.25rem 1.25rem;
+	}
+
+	#intro h1 {
+		font-size: 2rem;
+	}
+
+	#intro h2 {
+		font-size: 0.8rem;
+	}
+}
+
+/* Featured post heading - reduce on small screens */
+@media screen and (max-width: 736px) {
+	#main > .post header.major > h1,
+	#main > .post header.major h2 {
+		font-size: 1.75rem;
+		line-height: 1.25;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#main > .post {
+		padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+	}
+
+	#main > .post header.major > h1,
+	#main > .post header.major h2 {
+		font-size: 1.35rem;
+		margin: 0 0 1rem 0;
+	}
+}
+
+/* Featured post demo buttons - stack full-width on mobile */
+@media screen and (max-width: 736px) {
+	.post.featured ul.actions.special {
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-moz-align-items: stretch;
+		-webkit-align-items: stretch;
+		-ms-align-items: stretch;
+		align-items: stretch;
+		margin-left: 0;
+		gap: 0.5rem;
+	}
+
+	.post.featured ul.actions.special li {
+		padding-left: 0;
+		width: 100%;
+	}
+
+	.post.featured ul.actions.special li .button {
+		display: block;
+		width: 100%;
+		height: auto;
+		line-height: 1.4;
+		padding: 0.75rem 1rem;
+		font-size: 0.75rem;
+		white-space: normal;
+		word-break: normal;
+	}
+}
+
+/* Project card images - cap height so tall images don't dominate */
+@media screen and (max-width: 736px) {
+	.image.fit img {
+		height: 200px;
+		object-fit: cover;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.image.fit img {
+		height: 175px;
+	}
+}
+
+/* Project cards - tighten padding on very small screens */
+@media screen and (max-width: 480px) {
+	#main > * {
+		padding: 2rem 1.5rem 1rem 1.5rem;
+	}
+
+	#main > .posts > * {
+		padding: 1.5rem !important;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	#main > .posts > * {
+		padding: 1.25rem !important;
+	}
+}
+
+/* Footer - prevent long email/text overflow */
+#footer a,
+#footer p {
+	overflow-wrap: break-word;
+	word-break: break-word;
+}
+
+@media screen and (max-width: 736px) {
+	#footer > section.split.contact > section {
+		padding: 1.75rem 1.5rem !important;
+	}
+
+	#footer > section.split.contact > section:first-child {
+		padding: 1.75rem 1.5rem !important;
+	}
+
+	#footer > section.split.contact > section:last-child {
+		padding: 1.75rem 1.5rem !important;
+	}
+}
+
+/* Nav panel toggle - meet Apple's 44px minimum tap target */
+@media screen and (max-width: 980px) {
+	#navPanelToggle {
+		min-height: 44px;
+		display: -webkit-inline-flex;
+		display: inline-flex;
+		-webkit-align-items: center;
+		align-items: center;
+	}
+}
